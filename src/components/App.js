@@ -3,13 +3,19 @@ import {
   Link,
   hashHistory
 } from 'react-router'
+import style from './css/layout.scss'
+import {
+  log
+} from '../utils/Utils.js'
+
+log(style);
 
 export default function App({
   children
 }) {
   return (
     <div>
-      <header>
+      <header className={style.tst}>
         Links:
         {' '}
         <Link to="/">Home</Link>

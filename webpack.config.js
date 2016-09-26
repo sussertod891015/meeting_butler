@@ -8,6 +8,8 @@
 'use strict';
 var webpack = require('webpack');
 var path = require('path');
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
 
 //路径
 var ROOT_PATH = path.resolve(__dirname);
@@ -44,14 +46,18 @@ module.exports = {
             include: SRC_PATH
         }, {
             test: /\.css$/,
-            loader: "style!css"
+            // loader: "style!css!postcss"
+            loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader"
         }, {
             test: /\.scss$/,
-            loaders: ["style?module", "css?module", "sass?module"]
+            loaders: ["style?modules&importLoaders=1", "css?modules&importLoaders=1", "sass?modules&importLoaders=1", "postcss?modules&importLoaders=1"]
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=999999999'
         }]
+    },
+    postcss: function() {
+        return [autoprefixer, precss];
     },
     jshint: {
         "esnext": true
