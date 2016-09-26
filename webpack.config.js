@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-23 22:33:21
+ * @Last Modified time: 2016-09-26 11:59:41
  */
 
 'use strict';
@@ -13,7 +13,7 @@ var path = require('path');
 var ROOT_PATH = path.resolve(__dirname);
 var SRC_PATH = path.resolve(ROOT_PATH, 'src');
 var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
-var ip = '192.168.1.101';
+var ip = '10.244.138.102';
 
 module.exports = {
     entry: {
