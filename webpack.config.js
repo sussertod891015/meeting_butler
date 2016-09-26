@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-26 16:49:51
+ * @Last Modified time: 2016-09-26 17:55:53
  */
 
 'use strict';
@@ -50,6 +50,12 @@ module.exports = {
         }, {
             test: /\.scss$/,
             loaders: ["style?modules&importLoaders=1", "css?modules&importLoaders=1", "sass?modules&importLoaders=1", "postcss?modules&importLoaders=1"]
+                // }, {
+                //     test: /\.css$/,
+                //     loader: "style-loader!css-loader?modules"
+                // }, {
+                //     test: /\.scss$/,
+                //     loaders: ["style?modules", "css?modules", "sass?modules"]
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=999999999'
