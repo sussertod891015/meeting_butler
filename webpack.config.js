@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-26 11:59:41
+ * @Last Modified time: 2016-09-26 16:49:51
  */
 
 'use strict';
@@ -46,7 +46,6 @@ module.exports = {
             include: SRC_PATH
         }, {
             test: /\.css$/,
-            // loader: "style!css!postcss"
             loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader"
         }, {
             test: /\.scss$/,
