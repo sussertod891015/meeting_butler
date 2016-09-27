@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-27 15:51:33
+ * @Last Modified time: 2016-09-27 17:06:30
  */
 
 'use strict';
@@ -46,11 +46,10 @@ module.exports = {
             include: SRC_PATH
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader?modules!postcss-loader?importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"
-                // }, {
-                //     test: /\.scss$/,
-                //     loaders: ["style", "css", "postcss?modules&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"]
-                // postLoaders: ["postcss?modules&importLoaders=1"]
+            loader: "style-loader!css-loader?modules!postcss-loader?&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"
+        }, {
+            test: /\.scss$/,
+            loaders: ["style", "css?modules", "postcss?&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]", "sass"]
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=999999999'

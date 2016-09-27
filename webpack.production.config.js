@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:19:03
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-27 15:08:27
+ * @Last Modified time: 2016-09-27 17:06:44
  */
 
 'use strict';
@@ -33,18 +33,17 @@ module.exports = {
             include: SRC_PATH
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader"
+            loader: "style-loader!css-loader?modules!postcss-loader?&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"
         }, {
             test: /\.scss$/,
-            loaders: ["style?modules", "css?modules", "sass?modules"],
-            postLoaders: ["postcss?modules&importLoaders=1"]
+            loaders: ["style", "css?modules", "postcss?&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]", "sass"]
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=999999999'
         }]
     },
     postcss: function() {
-        return [autoprefixer, precss];
+        return [precss, autoprefixer];
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(
