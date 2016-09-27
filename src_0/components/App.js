@@ -8,8 +8,6 @@ import {
   log
 } from '../utils/Utils.js'
 
-log(style);
-
 export default function App({
   children
 }) {

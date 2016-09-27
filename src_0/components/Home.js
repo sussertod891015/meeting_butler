@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-23 15:01:05
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-24 00:24:13
+ * @Last Modified time: 2016-09-27 23:18:25
  */
 
 'use strict';
@@ -11,10 +11,17 @@ import React, {
     Component
 } from 'react'
 import {
+    bindActionCreators
+} from 'redux';
+import {
+    connect
+} from 'react-redux'
+import * as updateActions from '../actions/count'
+import {
     log
 } from '../utils/Utils'
 
-export default class Home extends Component {
+export class Home extends Component {
     render() {
         const {
             increase,
@@ -31,3 +38,15 @@ export default class Home extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        number: state.update.number
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(updateActions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

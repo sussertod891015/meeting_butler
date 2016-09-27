@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-27 17:51:21
+ * @Last Modified time: 2016-09-27 23:14:55
  */
 
 'use strict';
@@ -13,9 +13,9 @@ var autoprefixer = require('autoprefixer');
 
 //路径
 var ROOT_PATH = path.resolve(__dirname);
-var SRC_PATH = path.resolve(ROOT_PATH, 'src');
+var SRC_PATH = path.resolve(ROOT_PATH, 'src_0');
 var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
-var ip = '10.244.19.151';
+var ip = '192.168.1.103';
 
 module.exports = {
     entry: {

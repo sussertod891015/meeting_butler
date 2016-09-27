@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 16:05:45
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-24 00:12:34
+ * @Last Modified time: 2016-09-27 23:16:04
  */
 
 'use strict';
@@ -56,7 +56,7 @@ import {
 import App from './components/App'
 import Foo from './components/Foo'
 import Bar from './components/Bar'
-import Home from './containers/App'
+import Home from './components/Home'
 import configureStore from './store/configureStore'
 import DevTools from './containers/DevTools'
 
