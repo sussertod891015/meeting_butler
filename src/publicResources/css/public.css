@@ -1,0 +1,25 @@
+/*
+* @Author: Sussertod
+* @Date:   2016-09-27 11:34:12
+* @Last Modified by:   Sussertod
+* @Last Modified time: 2016-09-27 15:54:20
+*/
+
+$fullSize: 100%;
+$remNum: 100;
+
+html,body{
+    width: $fullSize;
+    height: $fullSize;
+}
+
+select, input, textarea {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+@function px($n) {
+  @return $n/$remNum+rem;
+}

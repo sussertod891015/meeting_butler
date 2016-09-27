@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-22 15:17:20
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-26 17:55:53
+ * @Last Modified time: 2016-09-27 15:51:33
  */
 
 'use strict';
@@ -15,7 +15,7 @@ var autoprefixer = require('autoprefixer');
 var ROOT_PATH = path.resolve(__dirname);
 var SRC_PATH = path.resolve(ROOT_PATH, 'src');
 var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
-var ip = '10.244.138.102';
+var ip = '10.244.19.151';
 
 module.exports = {
     entry: {
@@ -46,23 +46,18 @@ module.exports = {
             include: SRC_PATH
         }, {
             test: /\.css$/,
-            loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader"
-        }, {
-            test: /\.scss$/,
-            loaders: ["style?modules&importLoaders=1", "css?modules&importLoaders=1", "sass?modules&importLoaders=1", "postcss?modules&importLoaders=1"]
-                // }, {
-                //     test: /\.css$/,
-                //     loader: "style-loader!css-loader?modules"
+            loader: "style-loader!css-loader?modules!postcss-loader?importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"
                 // }, {
                 //     test: /\.scss$/,
-                //     loaders: ["style?modules", "css?modules", "sass?modules"]
+                //     loaders: ["style", "css", "postcss?modules&importLoaders=1&localIdentName=[path][name]---[local]---[hash:base64:5]"]
+                // postLoaders: ["postcss?modules&importLoaders=1"]
         }, {
             test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             loader: 'url-loader?limit=999999999'
         }]
     },
     postcss: function() {
-        return [autoprefixer, precss];
+        return [precss, autoprefixer];
     },
     jshint: {
         "esnext": true
