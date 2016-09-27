@@ -2,7 +2,7 @@
  * @Author: Sussertod
  * @Date:   2016-09-27 11:21:53
  * @Last Modified by:   Sussertod
- * @Last Modified time: 2016-09-27 16:59:28
+ * @Last Modified time: 2016-09-27 17:54:26
  */
 
 'use strict';
@@ -34,7 +34,10 @@ log(style)
 export default class App extends Component {
     render() {
         return (
-            <div className={style["material-icons"]}>home</div>
+            <div>
+                <div className={style["material-icons"]}>home</div>
+            </div>
+
         )
     }
 }
